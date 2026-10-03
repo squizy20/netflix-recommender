@@ -26,3 +26,29 @@ Runner-up (Action):
 Try another recommendation? (y/n): n
 Enjoy the movie!
 
+
+hashi@LAPTOP-CTEKBEUS MINGW64 ~/OneDrive/Documents/main_40 (main)
+$ ./recommender
+=== Netflix Movie Recommendation Assistant ===
+
+Genre:  1 Action  2 Comedy  3 Drama  4 Sci-Fi  5 Horror  6 Documentary  7 Animation
+Pick a genre (1-7): 1
+
+Mood:   1 Fun  2 Thrilling  3 Thoughtful
+Pick a mood (1-3): 2
+
+Age:    1 Under 13  2 13-15  3 16-17  4 18 and above
+Pick your age group (1-4): 3
+
+How many minutes do you have? (60-300): 70
+
+----------------------------------------
+Sorry, nothing in our catalogue fits those choices.
+Try more time, a different mood, or another genre!
+----------------------------------------
+
+Try another recommendation? (y/n): x
+  Please enter y or n.
+
+Try another recommendation? (y/n): n
+Enjoy the movie!
