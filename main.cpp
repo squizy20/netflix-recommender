@@ -145,15 +145,22 @@ void recommend() {
     }
     cout << "----------------------------------------\n";
 }
-
 int main() {
     cout << "=== Netflix Movie Recommendation Assistant ===\n";
     char again;
     do {
         recommend();
-        cout << "\nTry another recommendation? (y/n): ";
-        cin >> again;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        while (true) {
+            cout << "\nTry another recommendation? (y/n): ";
+            if (!(cin >> again)) {          // input ended - stop cleanly
+                cout << "\nGoodbye!\n";
+                return 0;
+            }
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            if (again == 'y' || again == 'Y' || again == 'n' || again == 'N')
+                break;
+            cout << "  Please enter y or n.\n";
+        }
     } while (again == 'y' || again == 'Y');
 
     cout << "Enjoy the movie!\n";
