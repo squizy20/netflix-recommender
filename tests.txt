@@ -1,0 +1,40 @@
+TEST CASES - Netflix Movie Recommendation Assistant
+
+Test 1: Normal match
+Inputs: genre 1 (Action), mood 2 (Thrilling), age group 4 (18 and above), 150 minutes
+Output:
+  Your best match (Action):
+    Extraction (116 min, 18+)
+    A mercenary races to rescue a kidnapped boy through a hostile city.
+  Runner-up (Action):
+    The Gray Man (129 min, 16+)
+    A freelance agent is hunted across the globe by a rival assassin.
+Result: PASS
+
+Test 2: No title in chosen genre fits (closest match)
+Inputs: genre 5 (Horror), mood 1 (Fun), age group 1 (Under 13), 300 minutes
+Output:
+  No Horror title fits, but this is the closest match (Animation):
+    Klaus (96 min, 0+)
+    A postman and a toymaker bring cheer to a feuding village.
+  Runner-up (Animation):
+    The Mitchells vs. the Machines (114 min, 0+)
+    A quirky family must stop a robot uprising.
+Result: PASS (all horror titles are 18+, so they are filtered out)
+
+Test 3: No match at all
+Inputs: genre 5 (Horror), mood 2 (Thrilling), age group 4 (18 and above), 60 minutes
+Output:
+  Sorry, nothing in our catalogue fits those choices.
+  Try more time, a different mood, or another genre!
+Result: PASS (every title is longer than 60 minutes)
+
+Test 4: Invalid input
+Inputs: "abc" and "9" at the genre prompt
+Output: (paste what your program printed)
+Result: PASS if it asked again instead of crashing
+
+Test 5: Repeat option
+Inputs: "y" at "Try another recommendation?", then "n" at the next one
+Output: (paste what your program printed)
+Result: PASS if it ran again on "y" and exited with "Enjoy the movie!" on "n"
